@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: Inter__Medium;
+    src: url('../Fonts/Inter/static/Inter-Medium.ttf');
+}
+
+@font-face {
+    font-family: Inter__SemiBold;
+    src: url('../Fonts/Inter/static/Inter-SemiBold.ttf');
+}
+
+@font-face {
+    font-family: Inter__Bold;
+    src: url('../Fonts/Inter/static/Inter-Bold.ttf');
+}
+
+@font-face {
+    font-family: Lato__Regular;
+    src: url('../Fonts/Lato/Lato-Regular.ttf');
+}
+
+@font-face {
+    font-family: Lato__Bold;
+    src: url('../Fonts/Lato/Lato-Bold.ttf');
+}
+
+/*the container must be positioned relative:*/
+
+.column-aside {
+    height: auto;
+    padding: 30px 80px;
+}
+
+.form-control {
+    width: 95%;
+}
+
+.custom-select {
+    position: relative;
+    width: 95%;
+    background-color: rgba(244, 244, 244, 1);
+    border-radius: 12px;
+    font-family: 'Inter__Medium';
+    font-size: calc(9pt + 0.15vw);
+}
+
+.custom-select select {
+    display: none;
+    /*hide original SELECT element:*/
+}
+
+.sl__text {
+    font-family: 'Inter__SemiBold';
+    font-size: calc(9pt + 0.15vw);
+}
+
+/*style the arrow inside the select element:*/
+
+.select-selected:after {
+    position: absolute;
+    content: " ";
+    top: 20px;
+    right: 12px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: black transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent black transparent;
+    top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+
+.select-items div, .select-selected {
+    color: rgba(96, 95, 95, 1);
+    padding: 12px 16px;
+    border: 1px solid rgba(244, 244, 244, 1);
+    cursor: pointer;
+    user-select: none;
+    border-radius: 12px;
+}
+
+/*style items (options):*/
+
+.select-items {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    /* border: 1px solid black; */
+    border-radius: 12px;
+}
+
+/*hide the items when the select box is closed:*/
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.form-control:focus {
+    color: rgba(96, 95, 95, 1);
+    background-color: rgba(244, 244, 244, 1);
+    border-color: transparent;
+    outline: 0;
+    box-shadow: none;
+}
+
+.form-control {
+    background-color: rgba(244, 244, 244, 1);
+    border-color: transparent;
+    padding: 12px;
+    color: rgba(96, 95, 95, 1);
+    margin: 8px 0px;
+    border-radius: 12px;
+    font-family: 'Inter__Medium';
+    font-size: calc(9pt + 0.15vw);
+}
+
+.form-control:hover {
+    background-color: rgba(232, 240, 254, 1);
+}
+
+.buttn__new {
+    margin: 100px auto;
+}
+
+.buttn__new button {
+    border: none;
+    padding: 8px 30px;
+    color: rgba(255, 255, 255, 1);
+    background: #FD0404;
+    box-shadow: 0px 12px 20px rgba(53, 80, 226, 0.2);
+    border-radius: 10px;
+    font-size: calc(9pt + 0.15vw);
+    font-family: 'Inter__SemiBold';
+    transition: .3s ease-in;
+}
+
+.buttn__new button:hover {
+    background-color: rgba(56, 56, 56, 1);
+    transform: translateY(-2px);
+    transition: .3s ease-in;
+}
+
+.column-aside p {
+    font-family: 'Inter__SemiBold';
+    font-size: calc(10pt + 0.15vw);
+    letter-spacing: 0.03em;
+    color: rgba(40, 40, 40, 1);
+}
+
+@media screen and (max-width: 538px) {
+    .column-aside {
+        padding: 30px 20px;
+    }
+}
